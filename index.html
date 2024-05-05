@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>calculadora</title>
+</head>
+<body>
+
+<h1><strong><del>@vitin</del></strong></h1>
+<div class="calculadora">
+  <div class="tela"></div>
+     <div class="botoes">
+       <div class="fra1">
+<td><button onclick="delet('C')">C</button></td>
+<button onclick="ale('()')">()</button>
+<td><button onclick="ale('%')">%</button></td>
+<td><button onclick="ale('/')">÷</button></td><br>
+</div>
+<td><button onclick="ale('1')">1</button></td>
+<td><button onclick="ale('2')">2</button></td>
+<td><button onclick="ale('3')">3</button></td>
+<td><button style="background:orange;"onclick="ale('*')">×</button></td><br>
+<td><button onclick="ale('4')">4</button></td>
+<td><button onclick="ale('5')">5</button></td>
+<td><button onclick="ale('6')">6</button></td>
+<td><button style="background:orange;"onclick="ale('-')">-</button></td><br>
+<td><button onclick="ale('7')">7</button></td>
+<td><button onclick="ale('8')">8</button></td>
+<td><button onclick="ale('9')">9</button></td>
+<td><button style="background:orange;"onclick="ale('+')">+</button></td><br>
+<td><button onclick="ale('0')">0</button></td>
+<td><button onclick="esp('>')">></button></td>
+<td><button onclick="espit('<')"><</button></td>
+<td><button style="background:orange" onclick="re('=')">=</button></td>
+     </div>
+  
+  
+</div>
+
+</body>
+<style>
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    justify-content: center;
+    align-items: center;
+    background: rgb(82,114,174);
+background: linear-gradient(90deg, rgba(82,114,174,1) 0%, rgba(132,139,147,1) 100%);
+  }
+  .calculadora{
+    background: #c1c1c1;
+    margin-top:200px;
+    height: 440px;
+    margin-left: 55px;
+    width: 300px;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  }
+  .tela{
+    background: #666;
+    height: 70px;
+    border-radius: 7px;
+    text-align: end;
+    color:#fff;
+    font-size: 60px;
+  }
+  
+  button{
+    height:60px;
+    width: 60px;
+    border-radius: 5px;
+    margin:5px;
+    font-size: 40px;
+  }
+ button:hover{
+  transform: translateX(0) scale(1.1);
+ }
+  .fra1 button{
+  background:orange;
+  }
+  h1{
+    text-align: center;
+    color: #fff;
+  }
+</style>
+<script>
+  function ale(num){
+document.querySelector(".tela").innerHTML += num;
+}
+function delet(){
+  document.querySelector(".tela").innerHTML = "";
+}
+function espit(){
+var tela = document.querySelector(".tela").innerHTML;
+document.querySelector(".tela").innerHTML -= 1;
+}
+function esp(){
+  var tela = document.querySelector(".tela").innerHTML;
+  document.querySelector(".tela").innerHTML -= -1;
+}
+function re(){
+  var tela = document.querySelector(".tela").innerHTML;
+  if(tela){
+   document.querySelector(".tela").innerHTML = eval(tela)
+  }else{
+    document.querySelector(".tela").innerHTML = "..."
+  }
+}
+
+</script>
+</html>
